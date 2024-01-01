@@ -15,6 +15,10 @@ public class Main {
         System.out.println(array);
         array.add(1, 100);
         System.out.println(array);
+        array.removeFirst();
+        System.out.println(array);
+        array.removeElement(4);
+        System.out.println(array);
     }
 
 }
