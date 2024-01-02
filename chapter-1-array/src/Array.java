@@ -1,14 +1,14 @@
 import java.util.StringJoiner;
 
-public class Array {
-    private int[] data;
+public class Array<E> {
+    private E[] data;
     private int size;
 
     /**
      * @param capacity 数组初始容量
      */
     public Array(int capacity) {
-        data = new int[capacity];
+        data = (E[]) new Object[capacity];
         size = 0;
     }
 
@@ -31,35 +31,35 @@ public class Array {
         return size == 0;
     }
 
-    public void addLast(int e) {
+    public void addLast(E e) {
 //        if(size == data.length)
 //            throw new IllegalArgumentException("Array is already full!");
 //        data[size++] = e;
         add(size, e);
     }
 
-    public void addFirst(int e) {
+    public void addFirst(E e) {
         add(0, e);
     }
 
-    public int get(int index) {
+    public E get(int index) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("Invalid index!");
         return data[index];
     }
 
-    public void set(int index, int e) {
+    public void set(int index, E e) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("Invalid index!");
         data[index] = e;
     }
 
-    public void add(int index, int e) {
-        if (size == data.length)
-            throw new IllegalArgumentException("Array is already full!");
-
+    public void add(int index, E e) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Invalid index!");
+
+        if (size == data.length)
+            resize(2 * data.length);
 
         for (int i = size - 1; i >= index; --i) {
             data[i + 1] = data[i];
@@ -68,43 +68,54 @@ public class Array {
         size++;
     }
 
-    public boolean contains(int e) {
+    // resize the data array to accommodate more elements / save space
+    private void resize(int newSize) {
+        E[] newData = (E[]) new Object[newSize];
+        for (int i = 0; i < size; ++i)
+            newData[i] = data[i];
+        data = newData;
+    }
+
+    public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e)
+            if (data[i].equals(e))
                 return true;
         }
         return false;
     }
 
     // return -1  if cannot find e
-    public int find(int e) {
+    public int find(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e)
+            if (data[i].equals(e))
                 return i;
         }
         return -1;
     }
 
-    public int remove(int index) {
+    public E remove(int index) {
         if (index >= size || index < 0)
             throw new IllegalArgumentException("Invalid index!");
-        int ret = data[index];
+        E ret = data[index];
         for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
         size--;
+        data[size] = null;
+        if (data.length == size * 4 && data.length / 2 != 0) // lazy resize 防止复杂度震荡
+            resize(data.length / 2); // 无法 new 一个大小为 0 的数组
         return ret;
     }
 
-    public int removeFirst() {
+    public E removeFirst() {
         return remove(0);
     }
 
-    public int removeLast() {
-        return remove(data[size - 1]);
+    public E removeLast() {
+        return remove(size - 1);
     }
 
-    public void removeElement(int e) {
+    public void removeElement(E e) {
         int i = find(e);
         if (i != -1)
             remove(i);
