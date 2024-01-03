@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d6213bb-ed70-4fdf-abef-acab1317850f" name="Changes" comment="array remove">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Array.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="3d6213bb-ed70-4fdf-abef-acab1317850f" name="Changes" comment="array resize" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +68,7 @@
       <workItem from="1704123676343" duration="970000" />
       <workItem from="1704124672955" duration="57000" />
       <workItem from="1704175993280" duration="868000" />
-      <workItem from="1704196579326" duration="2441000" />
+      <workItem from="1704196579326" duration="2711000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -98,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704124690098</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="array resize">
+      <option name="closed" value="true" />
+      <created>1704199324885</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704199324885</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +129,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="array init" />
     <MESSAGE value="array remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="array remove" />
+    <MESSAGE value="array resize" />
+    <option name="LAST_COMMIT_MESSAGE" value="array resize" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 # DataStructure
 DataStructure Learning Note
 
-## Array
+# Array
 
 ***简单时间复杂度分析* O**
 
@@ -41,3 +41,25 @@ DataStructure Learning Note
 **复杂度震荡**：同时先后进行 addLast 和 removeLast 两次操作都是 O(n)
 
 解决方案：不要让 addLast 和 removeLast 在同一个边界 resize (*Lazy*)
+
+
+
+# Stack
+
+> FILO
+
+应用
+
+- undo 操作
+- 程序调用的系统栈
+
+# Queue
+
+> FIFO
+
+
+
+***循环队列***
+
+- `front == tail` 队列为空
+- `(tail + 1) % capacity == front` 队列为满 -- 故意浪费一个空间
