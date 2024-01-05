@@ -82,3 +82,53 @@ DataStructure Learning Note
 技巧: ***虚拟头节点***
 
 > 将对于链表头的操作和普通元素统一起来
+
+
+
+# Recursion
+
+> 链表与递归
+
+*递归*: 将原问题转换为同类型的更小问题
+
+`Sum(arr[0...n-1]) = arr[0] + Sum(arr[1...n-1])`
+
+```java
+public class Sum {
+    public static int sum(int[] arr) {
+        return sum(arr, 0);
+    }
+
+    // sum(arr[l...n-1]) 宏观语义
+    public static int sum(int[] arr, int l) {
+      	// 最基本的问题(不可分割)
+        if (l >= arr.length)
+            return 0;
+      	// 原问题转化成更小问题
+        return arr[l] + sum(arr, l + 1);
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
