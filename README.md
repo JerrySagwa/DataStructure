@@ -141,11 +141,15 @@ class Node {
 
 *BST* : 每个节点的值都大于左子树的所有节点的值，小于右子树的所有节点的值 -- 每一棵子树也是二分搜索树
 
+# Heap
+
+> 完全二叉树：把所有元素按照顺序排列成树的形状
+
+![image-20240114231416340](/Volumes/T7 Shield/DS&A/Learning/DataStructure/README.assets/image-20240114231416340.png)
 
 
 
-
-
+堆中的每个节点的值不大于其父节点
 
 
 
